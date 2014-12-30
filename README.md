@@ -78,3 +78,244 @@ A model is like an advanced grid, it's more specific about it's form and isn't a
 
 ### 4. Objects
 
+An object (like a simple button) is a stand-alone collection of CSS code that inherits the properties of the lower layers. They are organized by **topic(T)**, **subject(S)** and **class(C)**. We will refer to this method as the **TSC standard**. 
+
+There are 4 topics(T), they differ in the way they communicate with the user:
+
+- **Presentation** boxes to captivate the user
+- **State** objects to inform the user
+- **UI controls** to interact with the user
+- **Navigation** elements to guide the user
+
+Each of the 4 topics(T) can have several subjects(S):
+
+**Presentation**
+- list
+- article
+- box
+- figure
+- gallery
+- head
+- header
+- quote
+- table
+
+
+**State**
+- badge
+- tag	
+- progress
+
+**UI**
+- button
+- form
+- link
+- tab
+- toolbar
+
+**Navigation**
+- index
+- nav
+
+Finally each subject(S) has 1 or more classes(C), they form the actual object that can be used in a HTML project .
+
+**UI**
+- button.css
+  - .button
+  - .buttonGroup
+  - .buttonBlock
+  - .buttonForm
+
+Creating an object
+------------
+For quality control to work we need a system that is standard and universal. We have to adopt conventions in every step of the development process. 
+
+cssObjects adopts a code writing style based on hierarchy that can be used for every object in a project. It's very visual in that a developer can easily see the construction of an object, distinguish it's parts and view any versions of the object.
+
+### Construction
+
+An object has 4 sections:
+
+- **Class**: The main component name, for instance .tablePricing
+- **Part**: Named elements or 'parts' inside an object, for instance . tablePricing-heading
+- **Version**: Other versions of the object, for instance . tablePricing.small
+- **Media**: Classes, parts or versions that change using media queries
+
+
+| Section        | Convention           |
+| ------------- |-------------|
+| Class      | .className |
+| Part      | .className-part      |
+| Version | .className.version      |
+
+### Pattern
+
+To differentiate between the 4 sections we use a combination of css comments, white space and hierarchy. This pattern design also helps to evaluate the concept of css specificity.
+
+At it's base the pattern goes like this:
+
+``` css
+.class
+.class li
+
+.class-part
+
+.class.version
+.class.version li
+
+.class.version .class-part
+
+.media
+```
+
+If an object is more bulky, has more parts or versions then we use css commenting to keep the 4 sections organized.
+
+Naming convention
+------------
+Many developers have trouble selecting class names for their components. There is also the consideration that a class name should be semantic in it's nature. To streamline this process cssObjects uses the TSC standard to help define the right class name for each object.
+
+Ask yourself these question in relation to the TSC standard:
+
+- Of what **topic(T)** is the object
+- To what **subject(S)** can it belong
+- What function does the **class(C)** have?
+
+To establish the name we combine the subject(S) with it's class(C) function. The words are combined using camelCase, where the first letter of the subject(S) is lowercase and the first letter of each subsequent concatenated class(C) name is capitalized. 
+
+### Example 1
+
+What we need: a box to style a commercial square banner
+
+```
+Topic(T)
+- presentation
+
+Subject(S)
+- box
+
+Class(C)
+- square banner
+```
+
+CSS: **.boxSquareBanner** in file: **box.css**
+
+### Example 2
+
+What we need: a list of text links with check icons aligned to the left
+
+```
+Topic(T)
+- presentation
+
+Subject(S)
+- list
+
+Class(C)
+- check icon
+```
+
+CSS: **.listCheckIcon** in file: **list.css**
+
+### Example 3
+
+What we need: a full screen kind of button to continue to the next page
+
+```
+Topic(T)
+- user interface
+
+Subject(S)
+- button
+
+Class(C)
+- continue to page
+```
+
+CSS: **.buttonContinueToPage** in file: **button.css**
+
+A collection of TSC names
+------------
+- ui
+- interface
+- image
+- illustration
+- logo
+- icon
+- script
+- sign
+- link
+- type
+- deck
+- news
+- photo
+- badge
+- dock
+- blur
+- animation
+- set
+- symbol
+- menu
+- page
+- landing
+- date
+- price
+- quote
+- player
+- widget
+- movie
+- cycle
+- album
+- brand
+- process
+- char
+- table
+- pattern
+- box
+- post
+- text
+- client
+- chat
+- marker
+- poster
+- frame
+- panel
+- music
+- sketch
+- radio
+- line
+- comment
+- profile
+- setting
+- nav
+- form
+- status
+- dashboard
+- button
+- aside
+- article
+- toolbar
+- window
+- data
+- tab
+- bar
+- layout
+- tag
+- calendar
+- note
+- task
+- header
+- thumb
+- flag
+- map
+- slider
+- ticket
+- chart
+- loading
+- picker
+- focus
+- admin
+- app
+- switch
+
+
+
