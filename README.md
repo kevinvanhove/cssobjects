@@ -1,0 +1,4 @@
+cssobjects
+==========
+
+CSS naming methodology
